@@ -46,7 +46,7 @@ const Work = () => {
     <>
       <h2 className='head-text'>My Creative <span>Portfolio</span>Section</h2>
       <div className="app__work-filter">
-        {['UI/UX', 'Web App', 'Mobile App', 'React js', 'All'].map((item, index) => (
+        {['UI/UX', 'Web App', 'Full Stack', 'React js', 'All'].map((item, index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -59,15 +59,15 @@ const Work = () => {
         animate={animateCard}
         transition={{ duration: .5, delayChildren: .5 }}
         className='app__work-portfolio'>
-        {filterWork.map((work, index) => (
+        {filterWork?.map((work, index) => (
           <div className="app__work-item app__flex" key={index}>
             <div className="app__work-img app__flex">
-              <img src={urlFor(work.imgUrl)} alt={work.name} />
+              <img src={urlFor(work?.imgUrl)} alt={work?.name} />
               <motion.div
                 whileHover={{ opacity: [0, 1] }}
                 transition={{ duration: .25, ease: 'easeInOut', staggerChildren: .5 }}
                 className='app__work-hover app__flex'>
-                <a href={work.projectLink} target="_blank" rel="noreferr">
+                <a href={work?.projectLink} target="_blank" rel="noreferr">
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
                     whileHover={{ scale: [1, .9] }}
@@ -76,7 +76,7 @@ const Work = () => {
                     <AiFillEye />
                   </motion.div>
                 </a>
-                <a href={work.codeLink} target="_blank" rel="noreferr">
+                <a href={work?.codeLink} target="_blank" rel="noreferr">
                   <motion.div
                     whileInView={{ scale: [0, 1] }}
                     whileHover={{ scale: [1, .9] }}
