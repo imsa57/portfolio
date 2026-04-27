@@ -9,7 +9,11 @@ const NavigationDots = ({ active }) => {
                 href={`#${item}`}
                 key={item + index}
                 className='app__navigation-dot'
-                style={active === item ? { backgroundColor: '#313BAC' } : { }} />
+                aria-label={`Go to ${item} section`}
+                style={active === item ? { backgroundColor: '#313BAC' } : { }}
+            >
+                <span style={{ display: 'none' }}>{item}</span>
+            </a>
             ))}
         </div>
     )
