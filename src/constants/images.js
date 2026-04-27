@@ -12,6 +12,7 @@ import javascript from '../assets/javascript.png';
 import mu5 from '../assets/mu5.png';
 import node from '../assets/node.png';
 import python from '../assets/python.png';
+import shopify from '../assets/shopify.png';
 import react from '../assets/react.png';
 import redux from '../assets/redux.png';
 import sass from '../assets/sass.png';
@@ -27,7 +28,7 @@ import profile from '../assets/profile.png';
 import circle from '../assets/circle.svg';
 import logo from '../assets/logo.png';
 
-import adidas from '../assets/adidas.png';
+// import adidas from '../assets/adidas.png';
 import amazon from '../assets/amazon.png';
 import asus from '../assets/asus.png';
 import bolt from '../assets/bolt.png';
@@ -50,6 +51,7 @@ export default {
   mu5,
   node,
   python,
+  shopify,
   react,
   redux,
   sass,
@@ -62,7 +64,7 @@ export default {
   profile,
   circle,
   logo,
-  adidas,
+  // adidas,
   amazon,
   asus,
   bolt,

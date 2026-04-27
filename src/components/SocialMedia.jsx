@@ -12,7 +12,8 @@ const SocialMedia = () => {
               <BsInstagram/>
           </div>
           <div>
-              <FaFacebookF/>
+            <a href="https://github.com/imsa57?tab=repositories" target='_blank'><FaFacebookF/></a>
+             
           </div>
       
     </div>

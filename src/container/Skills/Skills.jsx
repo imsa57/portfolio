@@ -15,6 +15,7 @@ const Skills = () => {
     const skillQuery = '*[_type == "skills"]';
 
     client.fetch(query).then((data) => {
+      data = data.sort((a, b) => new Date(b._createdAt) - new Date(a._createdAt));
       setExperiences(data);
     });
     client.fetch(skillQuery).then((data) => {
@@ -28,12 +29,12 @@ const Skills = () => {
       <h2 className="head-text">Skills & Experience</h2>
       <div className="app__skills-container">
         <motion.div className='app__skills-list'>
-          {skills.map((skill) => (
+          {skills.map((skill,index) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: .5 }}
               className='app__skills-item app__flex'
-              key={skill.name}>
+              key={skill.name+index}>
 
               <div className="app__flex" style={{ backgroundColor: skill.bgColor }}>
                 <img src={urlFor(skill.icon)} alt={skill.name} />
@@ -47,10 +48,10 @@ const Skills = () => {
 
         <div
           className='app__skills-exp'>
-          {experiences.map((experience) => (
+          {experiences.map((experience,index) => (
             <motion.div
               className='app__skills-exp-item'
-              key={experience.year}>
+              key={experience.year+index}>
               <div className="app__skills-exp-year">
                 <p className="bold-text">{experience.year}</p>
               </div>
@@ -63,7 +64,7 @@ const Skills = () => {
                       className='app__skills-exp-work'
                       data-tip
                       data-for={work.name}
-                      key={work.name}
+                      key={index}
                     >
                       <h4 className='bold-text' data-tooltip-id={`work-description`} data-tooltip-content={work.desc}>{work.name}</h4>
                       <p className="p-text">{work.company}</p>

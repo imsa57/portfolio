@@ -113,7 +113,7 @@
   font-weight: 800;
   cursor: pointer;
   transition: all 0.3s ease;
-}
+} 
 .app__work-hover div svg {
   width: 50%;
   height: 50%;

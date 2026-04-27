@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { images } from '../../constants'
 import my_image from '../../assets/modifedBig1-removebg-preview.png'
 import './Header.scss'
 import { Wrapper } from '../../wrapper'
+import { client } from '../../client'
 
 
 
@@ -23,7 +24,18 @@ const sacaleVariants = {
   }
 }
 
+
 const Header = () => {
+
+  const [cvLink, setCVLink] = useState('');
+
+  useEffect(() => {
+    const query = '*[_type == "personal"]';
+
+    client.fetch(query).then((data) => {
+      setCVLink(data[0]?.myCVLink);
+    });
+  }, [])
   return (
     <div className='app__header app__flex'>
       <motion.div
@@ -40,11 +52,13 @@ const Header = () => {
             </div>
           </div>
 
-          <div className="tag-cmp app__flex">
-            <p className="p-text">Full-Stack Developer</p>
-            <p className="p-text">Fresher</p>
+          <div className="tag-cmp app__flex"> 
+            <p className="p-text app__flex">Shopify Developer</p>
+            {cvLink && (
+              <p className="p-text">MY CV : <a href={cvLink} target='_blank' rel='noopener noreferrer'>Download</a></p>
+            )}
           </div>
-        </div>
+        </div> 
 
       </motion.div>
 
@@ -68,7 +82,7 @@ const Header = () => {
         whileInView={sacaleVariants.whileInView}
         className='app__header-circles'>
 
-        {[images.redux, images.sass, images.react].map((circle, index) => (
+        {[images.react,images.shopify,images.node].map((circle, index) => (
           <div className="circle-cmp app__flex" key={`circle-${index}`}>
             <img src={circle} alt="profile_bg" />
           </div>
