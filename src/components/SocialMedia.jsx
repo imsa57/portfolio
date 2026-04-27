@@ -1,6 +1,6 @@
 import React from 'react'
-import { BsTwitter, BsInstagram } from 'react-icons/bs';
-import {FaFacebookF,FaLinkedinIn,FaGithub} from 'react-icons/fa';
+import { BsTwitter } from 'react-icons/bs';
+import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
 
 const SocialMedia = () => {
   return (
@@ -9,12 +9,12 @@ const SocialMedia = () => {
               <BsTwitter/>
           </div>
           <div>
-             <a href="https://www.linkedin.com/in/imsa57" target="_blank"><FaLinkedinIn /></a> 
+             <a href="https://www.linkedin.com/in/imsa57" target="_blank" rel="noreferrer"><FaLinkedinIn /></a>
           </div>
           <div>
-            <a href="https://github.com/imsa57?tab=repositories" target="_blank"><FaGithub /></a>
+            <a href="https://github.com/imsa57?tab=repositories" target="_blank" rel="noreferrer"><FaGithub /></a>
           </div>
-      
+
     </div>
   )
 }

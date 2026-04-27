@@ -92,7 +92,7 @@ const Work = () => {
                       <a
                         href={work?.projectLink}
                         target="_blank"
-                        rel="noreferr"
+                        rel="noreferrer"
                       >
                         <motion.div
                           whileInView={{ scale: [0, 1] }}
@@ -109,7 +109,7 @@ const Work = () => {
                         <a
                           href={work?.projectLink}
                           target="_blank"
-                          rel="noreferr"
+                          rel="noreferrer"
                           onClick={(e) => handleWorkPopup(e, work)}
                         >
                           <motion.div
@@ -126,7 +126,7 @@ const Work = () => {
                   </>
                 )}
                 {work?.codeLink && (
-                  <a href={work?.codeLink} target="_blank" rel="noreferr">
+                  <a href={work?.codeLink} target="_blank" rel="noreferrer">
                     <motion.div
                       whileInView={{ scale: [0, 1] }}
                       whileHover={{ scale: [1, 0.9] }}
